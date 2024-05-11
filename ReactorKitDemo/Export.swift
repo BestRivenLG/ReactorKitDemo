@@ -16,3 +16,4 @@
 @_exported import NSObject_Rx
 @_exported import SnapKit
 @_exported import SwifterSwift
+@_exported import RxFeedback

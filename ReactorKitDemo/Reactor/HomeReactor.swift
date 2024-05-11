@@ -30,11 +30,6 @@ class HomeReactor: Reactor {
         var noMore: Bool = false
     }
     
-    //
-    var dataSource: [String] = []
-    
-    var loadSubject = PublishSubject<Void>()
-
 }
 
 

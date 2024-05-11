@@ -7,11 +7,25 @@
 
 import UIKit
 
+enum DataSourceType: String, CaseIterable {
+    case reactor
+    case feedback
+    case feedbackReques
+    case todo
+    
+    var title: String {
+        rawValue
+    }
+}
+
 class ViewController: BasicViewController {
         
+    var dataSource: [DataSourceType] = DataSourceType.allCases
+
+    var didSelectSubject = PublishSubject<DataSourceType>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        reactor = homeReactor
 
         view.backgroundColor = .white
         view.addSubview(tableView)
@@ -19,37 +33,20 @@ class ViewController: BasicViewController {
             make.edges.equalToSuperview()
         }
         
-        view.addSubview(refreshBtn)
-        refreshBtn.snp.makeConstraints { make in
-            make.trailing.equalTo(-15)
-            make.top.equalTo(44)
-            make.height.equalTo(44)
-        }
-        
         tableView.reloadData()
-        
-        reactor?.loadSubject.onNext(())
     }
-    
-    lazy var homeReactor = HomeReactor()
     
     private lazy var tableView = UITableView(frame: .zero, style: .plain).then {
         $0.dataSource = self
         $0.delegate = self
         $0.register(cellWithClass: UITableViewCell.self)
     }
-    
-    private lazy var refreshBtn = UIButton().then {
-        $0.setTitleColor(.black, for: .normal)
-        $0.setTitle("刷新", for: .normal)
-    }
-    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        homeReactor.dataSource.count
+        dataSource.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -58,21 +55,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = homeReactor.dataSource[indexPath.row]
+        cell.textLabel?.text = dataSource[indexPath.row].title
         return cell
     }
-}
-
-extension ViewController: View {
-
-    func bind(reactor: HomeReactor) {
-        reactor.state.map({ $0.list }).subscribe(onNext: { [weak self] list in
-            self?.tableView.reloadData()
-        }).disposed(by: disposeBag)
-        
-        reactor.loadSubject.asObservable().map({ HomeReactor.Action.loadData }).bind(to: reactor.action).disposed(by: disposeBag)
-        
-        refreshBtn.rx.tap.map({ HomeReactor.Action.loadMore }).bind(to: reactor.action).disposed(by: disposeBag)
-    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let type = (dataSource[indexPath.row])
+        if type == .reactor {
+            navigationController?.pushViewController(ReactorViewController())
+        } else if type == .feedback {
+            navigationController?.pushViewController(FeedbackViewController())
+        } else if type == .feedbackReques {
+            navigationController?.pushViewController(FeedbackRequestViewController())
+        }
+    }
 }
