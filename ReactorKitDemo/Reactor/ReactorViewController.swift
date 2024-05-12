@@ -25,7 +25,6 @@ class ReactorViewController: BasicViewController {
         
         tableView.reloadData()
         
-//        loadSubject.onNext(())
     }
     
     lazy var homeReactor = HomeReactor()
@@ -74,7 +73,7 @@ extension ReactorViewController: View {
         
         refreshBtn.rx.tap.map({ HomeReactor.Action.loadMore }).bind(to: reactor.action).disposed(by: disposeBag)
         
-//        loadSubject.onNext(())
+        loadSubject.onNext(())
     }
     
 }

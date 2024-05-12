@@ -9,6 +9,7 @@ import UIKit
 
 enum DataSourceType: String, CaseIterable {
     case reactor
+    case reactorList
     case feedback
     case feedbackReques
     case feedbackList
@@ -64,6 +65,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let type = (dataSource[indexPath.row])
         if type == .reactor {
             navigationController?.pushViewController(ReactorViewController())
+        } else if type == .reactorList {
+            navigationController?.pushViewController(ReactorListViewController())
         } else if type == .feedback {
             navigationController?.pushViewController(FeedbackViewController())
         } else if type == .feedbackReques {

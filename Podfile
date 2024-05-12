@@ -19,6 +19,7 @@ target 'ReactorKitDemo' do
   pod 'SwifterSwift', '~> 6.2.0', :subspecs => ['UIKit', 'Foundation', 'CoreAnimation', 'SwiftStdlib', 'CoreGraphics']
   pod 'MJRefresh'
   pod 'RxFeedback'
+  pod 'RxDataSources', '~> 5.0'
 
 end
 

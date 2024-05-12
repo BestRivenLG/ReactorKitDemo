@@ -18,67 +18,36 @@
             endingLineNumber = "28"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "07D4D689-0AAB-4C28-A28E-4CCA22D287DD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ReactorKitDemo/Reactor/ReactorViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "bind(reactor:)"
-            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "07D4D689-0AAB-4C28-A28E-4CCA22D287DD - 318ce5607c7cbcd"
+                  uuid = "B5894BF2-2DCC-409A-89BD-C9B677D2F7E8 - f59a4d6529501e7e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ReactorKitDemo.ReactorViewController.bind(reactor: ReactorKitDemo.HomeReactor) -&gt; ()"
+                  symbolName = "ReactorKitDemo.ReactorViewController.viewDidLoad() -&gt; ()"
                   moduleName = "ReactorKitDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mrlg/Desktop/Practice/ReactorKitDemo/ReactorKitDemo/Reactor/ReactorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "77">
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "907">
                </Location>
                <Location
-                  uuid = "07D4D689-0AAB-4C28-A28E-4CCA22D287DD - 43933585624b0c45"
+                  uuid = "B5894BF2-2DCC-409A-89BD-C9B677D2F7E8 - f59a4d6529501e19"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ReactorKitDemo.HomeReactor.State) -&gt; Swift.Array&lt;Swift.String&gt; in ReactorKitDemo.ReactorViewController.bind(reactor: ReactorKitDemo.HomeReactor) -&gt; ()"
+                  symbolName = "ReactorKitDemo.ReactorViewController.viewDidLoad() -&gt; ()"
                   moduleName = "ReactorKitDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mrlg/Desktop/Practice/ReactorKitDemo/ReactorKitDemo/Reactor/ReactorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "23">
-               </Location>
-               <Location
-                  uuid = "07D4D689-0AAB-4C28-A28E-4CCA22D287DD - 7b16da72fe8c8f0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Array&lt;Swift.String&gt;) -&gt; () in ReactorKitDemo.ReactorViewController.bind(reactor: ReactorKitDemo.HomeReactor) -&gt; ()"
-                  moduleName = "ReactorKitDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mrlg/Desktop/Practice/ReactorKitDemo/ReactorKitDemo/Reactor/ReactorViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "77">
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "886">
                </Location>
             </Locations>
          </BreakpointContent>
