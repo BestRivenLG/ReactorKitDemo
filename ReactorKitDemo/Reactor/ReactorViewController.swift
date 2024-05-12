@@ -11,8 +11,6 @@ class ReactorViewController: BasicViewController {
     
     var dataSource: [String] = []
     
-    var loadSubject = PublishSubject<Void>()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         reactor = homeReactor
@@ -27,7 +25,7 @@ class ReactorViewController: BasicViewController {
         
         tableView.reloadData()
         
-        loadSubject.onNext(())
+//        loadSubject.onNext(())
     }
     
     lazy var homeReactor = HomeReactor()
@@ -70,9 +68,13 @@ extension ReactorViewController: View {
             self?.tableView.reloadData()
         }).disposed(by: disposeBag)
         
+        let loadSubject = PublishSubject<Void>()
+
         loadSubject.asObservable().map({ HomeReactor.Action.loadData }).bind(to: reactor.action).disposed(by: disposeBag)
         
         refreshBtn.rx.tap.map({ HomeReactor.Action.loadMore }).bind(to: reactor.action).disposed(by: disposeBag)
+        
+//        loadSubject.onNext(())
     }
     
 }

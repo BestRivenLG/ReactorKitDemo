@@ -11,6 +11,7 @@ enum DataSourceType: String, CaseIterable {
     case reactor
     case feedback
     case feedbackReques
+    case feedbackList
     case todo
     
     var title: String {
@@ -67,6 +68,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(FeedbackViewController())
         } else if type == .feedbackReques {
             navigationController?.pushViewController(FeedbackRequestViewController())
+        } else if type == .feedbackList {
+            navigationController?.pushViewController(FeedbackListViewController())
         }
     }
 }

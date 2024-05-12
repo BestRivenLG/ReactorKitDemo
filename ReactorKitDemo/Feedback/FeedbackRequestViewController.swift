@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum State {
+fileprivate enum State {
     case humanHasIt(Int)
     case machineHasIt(Int)
     
@@ -61,7 +61,7 @@ extension State: Equatable {
     }
 }
 
-enum Event {
+fileprivate enum Event {
     case minus
     case add
     case result
